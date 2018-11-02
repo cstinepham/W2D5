@@ -18,7 +18,12 @@ class Node
     # optional but useful, connects previous link to next link
     # and removes self from list.
   end
+
+  def inspect
+    "K: #{key}, V: #{val}"
+  end
 end
+
 
 class LinkedList
   include Enumerable
@@ -103,6 +108,14 @@ class LinkedList
     end
   end
 
+  def inspect
+    nodes = []
+    self.each do |node|
+      nodes << node
+    end
+
+    "#{nodes}"
+  end
   # uncomment when you have `each` working and `Enumerable` included
   # def to_s
   #   inject([]) { |acc, link| acc << "[#{link.key}, #{link.val}]" }.join(", ")
